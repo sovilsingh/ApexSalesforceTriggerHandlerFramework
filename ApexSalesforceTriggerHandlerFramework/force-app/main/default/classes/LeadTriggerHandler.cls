@@ -1,6 +1,6 @@
 public class LeadTriggerHandler extends TriggerHandler {
-    
-    List<Lead> newLeads;
+
+    @testVisible static ILeadTriggerHandlerDOA accountDoaInstance = new LeadTriggerHandlerDOA();
 
     public LeadTriggerHandler(){
         //constructor
@@ -9,8 +9,6 @@ public class LeadTriggerHandler extends TriggerHandler {
     }
     
     public override void beforeInsert() {
-        system.debug('leadTriggerHandler : beforeInsert');
-        System.debug('beforeInsert Leadnew'+ Trigger.new);
         				
     }
     public override void beforeUpdate() {
@@ -20,8 +18,6 @@ public class LeadTriggerHandler extends TriggerHandler {
         				
     }
     public override void afterInsert() {
-        system.debug('leadTriggerHandler afterinsert running');
-        System.debug('afterInsert Leadnew'+ Trigger.new);
         List<Account> accList = new List<Account>();
          for(Lead ld : (List<Lead>)Trigger.New)
          {
@@ -30,9 +26,9 @@ public class LeadTriggerHandler extends TriggerHandler {
              accList.add(acc);
          }
         //TriggerHandler.bypass('AccountTriggerHandler');
-        insert accList;
+        //insert accList;
+        accountDoaInstance.CreateAccountFromLead(accList);
         //TriggerHandler.clearBypass('AccountTriggerHandler');
-        system.debug('account'+accList);
         
         				
     }

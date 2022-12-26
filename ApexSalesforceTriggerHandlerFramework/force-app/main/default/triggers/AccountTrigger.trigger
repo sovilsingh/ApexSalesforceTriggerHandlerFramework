@@ -3,5 +3,4 @@ trigger AccountTrigger on Account (before insert, after insert, before update, a
 
         new AccountTriggerHandler().run();                            
 
-
 }

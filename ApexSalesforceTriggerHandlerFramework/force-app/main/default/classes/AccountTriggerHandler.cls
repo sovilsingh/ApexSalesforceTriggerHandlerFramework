@@ -1,6 +1,4 @@
 public class AccountTriggerHandler extends TriggerHandler {
-    
-    List<Lead> newLeads;
 
     public AccountTriggerHandler(){
         //constructor
