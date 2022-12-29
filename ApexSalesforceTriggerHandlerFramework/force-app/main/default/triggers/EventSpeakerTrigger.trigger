@@ -65,6 +65,8 @@ trigger EventSpeakerTrigger on EventSpeakers__c (before insert, before update ) 
     
       // Step 2 - SOQL on Event to get the Start Date and Put them into a Map
       
+    
+    /**
       Map<Id,DateTime> requestEvents = new Map<Id,DateTime>();
       
       List<Event__c> relatedEventList = [Select ID, Start_DateTime__c from Event__C Where ID IN : eventIdsSet ];
@@ -93,5 +95,5 @@ trigger EventSpeakerTrigger on EventSpeakers__c (before insert, before update ) 
                }
            }
        }
-       
+       **/
 }

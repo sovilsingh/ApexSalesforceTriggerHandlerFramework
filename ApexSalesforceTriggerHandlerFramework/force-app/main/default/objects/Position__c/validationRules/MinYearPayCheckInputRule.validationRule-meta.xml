@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MinYearPayCheckInputRule</fullName>
+    <active>true</active>
+    <description>Show error message if Min Year Pay is greater than or equal to Max Year Pay</description>
+    <errorConditionFormula>MinYearPay__c &gt;= MaxYearPay__c</errorConditionFormula>
+    <errorDisplayField>MinYearPay__c</errorDisplayField>
+    <errorMessage>The entered value for Min Year Pay is invalid.</errorMessage>
+</ValidationRule>
